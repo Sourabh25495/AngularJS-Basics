@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app = "myApp" ng-controller="myCtrl">
+<p>Your first name <input ng-model="Fname"></p>
+<p>Your last name <input ng-model="Lname"></p>
+<p>Your Age <input ng-model="number"></p>
+<p>Amount you paid <input ng-model="amount"></p>
+
+
+<h3>My name is {{Fname}} {{Lname}}</h3>
+<h3>My age is {{number}}</h3>
+<h3>I paid {{amount | currency}}</h3>
+<h4>The Url of the page is: {{url}}</h3>
+</div>
+
+<script>
+
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $location){
+
+        $scope.Fname = "";
+        $scope.Lname = "";
+        $scope.number = "";
+        $scope.amount = null;
+        $scope.url = $location.absUrl();
+
+    });
+
+
+
+</script>
+
+</body>
+</html>
